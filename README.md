@@ -20,11 +20,11 @@ Prerequisites
 - For the Postman API, Postman Web Client can be used
 
 In order to execute E2E UI Automation, below command is run on terminal
-robot --listener allure_robotframework --variable browserSelection:Chrome features
-** Browser can be set with browserSelection parameter in above command like Chrome or Firefox
+- robot --listener allure_robotframework --variable browserSelection:Chrome features
+- Browser can be set with browserSelection parameter in above command like Chrome or Firefox
 
 In order to generate an allure report after execution, below command is run on terminal
-allure serve output/allure
+- allure serve output/allure
 
 In order to execute API automation with robot framework, below command is run on terminal
-robot -d apiResult API
+- robot -d apiResult API
