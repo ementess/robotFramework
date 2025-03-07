@@ -92,4 +92,5 @@ All Items on page are listed correctly according to lowest price
     Should Be Equal    ${price_list}    ${sorted_prices}
 
 
-test
+Capture Screenshot
+    Take Screenshot
