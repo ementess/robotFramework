@@ -1,0 +1,1713 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.0 on win32)" generated="20250307 10:29:47.441" rpa="false" schemaversion="3">
+<suite id="s1" name="Features" source="C:\Users\503415198\Desktop\moneyPay\features">
+<suite id="s1-s1" name="Migros Petshop" source="C:\Users\503415198\Desktop\moneyPay\features\migros_petshop.robot">
+<kw name="Browser is opened and Migros web page is opened" library="migrosSteps" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${migrosURL}</arg>
+<arg>${browserSelection}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20250307 10:29:47.724" level="INFO">Opening browser 'Chrome' to base url 'https://www.migros.com.tr/'.</msg>
+<status status="PASS" starttime="20250307 10:29:47.724" endtime="20250307 10:29:56.087"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20250307 10:29:56.087" endtime="20250307 10:29:56.149"/>
+</kw>
+<status status="PASS" starttime="20250307 10:29:47.724" endtime="20250307 10:29:56.150"/>
+</kw>
+<test id="s1-s1-t1" name="Migros Main Page is displayed successfully" line="9">
+<kw name="Given Migros Home Page is displayed successfully" library="migrosSteps">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${tab_migrosSanalMarket_enabled}</arg>
+<arg>${waitTime}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20250307 10:29:56.151" endtime="20250307 10:30:08.769"/>
+</kw>
+<kw name="Location Should Contain" library="SeleniumLibrary">
+<arg>${migrosURL}</arg>
+<doc>Verifies that the current URL contains ``expected``.</doc>
+<msg timestamp="20250307 10:30:08.772" level="INFO">Current location contains 'https://www.migros.com.tr/'.</msg>
+<status status="PASS" starttime="20250307 10:30:08.769" endtime="20250307 10:30:08.772"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
+<arg>${page_spinner}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" starttime="20250307 10:30:08.773" endtime="20250307 10:30:08.780"/>
+</kw>
+<status status="PASS" starttime="20250307 10:29:56.151" endtime="20250307 10:30:08.781"/>
+</kw>
+<kw name="And Accept Cookie if cookie indicator is visible" library="migrosSteps">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${isVisible}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${cookie_indicator}</arg>
+<arg>${waitTime}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${cookie_indicator}</arg>
+<arg>${waitTime}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20250307 10:30:08.799" level="INFO">Element '//fe-product-cookie-indicator' is displayed.</msg>
+<status status="PASS" starttime="20250307 10:30:08.781" endtime="20250307 10:30:08.799"/>
+</kw>
+<msg timestamp="20250307 10:30:08.799" level="INFO">${isVisible} = True</msg>
+<status status="PASS" starttime="20250307 10:30:08.781" endtime="20250307 10:30:08.799"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${isVisible}</arg>
+<arg>User clicks to</arg>
+<arg>${cookie_accept_button}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="User clicks to" library="migrosSteps">
+<arg>${cookie_accept_button}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${element}</arg>
+<arg>${waitTime}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20250307 10:30:08.800" endtime="20250307 10:30:08.831"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250307 10:30:08.831" level="INFO">Clicking element '//fe-product-cookie-indicator//button[@class="mat-caption btn accept-all"]'.</msg>
+<status status="PASS" starttime="20250307 10:30:08.831" endtime="20250307 10:30:08.948"/>
+</kw>
+<status status="PASS" starttime="20250307 10:30:08.800" endtime="20250307 10:30:08.948"/>
+</kw>
+<status status="PASS" starttime="20250307 10:30:08.800" endtime="20250307 10:30:08.948"/>
+</kw>
+<status status="PASS" starttime="20250307 10:30:08.781" endtime="20250307 10:30:08.949"/>
+</kw>
+<kw name="And Close Blue Pop Up message on address bar if it is visible" library="migrosSteps">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${isVisible}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${bluePopUp_addressBar}</arg>
+<arg>${waitTime}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${bluePopUp_addressBar}</arg>
+<arg>${waitTime}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20250307 10:30:08.972" level="INFO">Element '//*[@class="header-middle ng-star-inserted"]//*[@class="popover ng-star-inserted"]' is displayed.</msg>
+<status status="PASS" starttime="20250307 10:30:08.950" endtime="20250307 10:30:08.972"/>
+</kw>
+<msg timestamp="20250307 10:30:08.972" level="INFO">${isVisible} = True</msg>
+<status status="PASS" starttime="20250307 10:30:08.950" endtime="20250307 10:30:08.972"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${isVisible}</arg>
+<arg>User clicks to</arg>
+<arg>${bluePopUP_closeIcon}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="User clicks to" library="migrosSteps">
+<arg>${bluePopUP_closeIcon}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${element}</arg>
+<arg>${waitTime}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20250307 10:30:08.973" endtime="20250307 10:30:08.990"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250307 10:30:08.991" level="INFO">Clicking element '//*[@class="popover ng-star-inserted"]//*[@data-icon="xmark"]'.</msg>
+<status status="PASS" starttime="20250307 10:30:08.991" endtime="20250307 10:30:09.049"/>
+</kw>
+<status status="PASS" starttime="20250307 10:30:08.973" endtime="20250307 10:30:09.050"/>
+</kw>
+<status status="PASS" starttime="20250307 10:30:08.973" endtime="20250307 10:30:09.050"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${isVisible}</arg>
+<arg>Sleep</arg>
+<arg>1</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250307 10:30:10.054" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20250307 10:30:09.050" endtime="20250307 10:30:10.054"/>
+</kw>
+<status status="PASS" starttime="20250307 10:30:09.050" endtime="20250307 10:30:10.054"/>
+</kw>
+<status status="PASS" starttime="20250307 10:30:08.949" endtime="20250307 10:30:10.055"/>
+</kw>
+<kw name="Run Keyword If Test Failed" library="BuiltIn" type="TEARDOWN">
+<arg>capture screenshot</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" starttime="20250307 10:30:10.055" endtime="20250307 10:30:10.055"/>
+</kw>
+<status status="PASS" starttime="20250307 10:29:56.150" endtime="20250307 10:30:10.056"/>
+</test>
+<test id="s1-s1-t2" name="Pet Shop option can be selected from Categories and User is redirected to Pet Shop page" line="14">
+<kw name="Given User should see" library="migrosSteps">
+<arg>${categories_icon}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${element}</arg>
+<arg>${waitTime}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20250307 10:30:10.060" endtime="20250307 10:30:37.116"/>
+</kw>
+<status status="PASS" starttime="20250307 10:30:10.059" endtime="20250307 10:30:37.116"/>
+</kw>
+<kw name="When User selects a category option from categories dropdown" library="migrosSteps">
+<arg>${category_petshop_id}</arg>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${categories_icon}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20250307 10:30:37.117" endtime="20250307 10:30:37.407"/>
+</kw>
+<kw name="User clicks to" library="migrosSteps">
+<arg>${categories_icon}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${element}</arg>
+<arg>${waitTime}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20250307 10:30:37.407" endtime="20250307 10:30:37.420"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250307 10:30:37.422" level="INFO">Clicking element '//div[@class="tabs"]//div[@class="categories-icon"]'.</msg>
+<status status="PASS" starttime="20250307 10:30:37.421" endtime="20250307 10:30:37.471"/>
+</kw>
+<status status="PASS" starttime="20250307 10:30:37.407" endtime="20250307 10:30:37.471"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${categories_dropdown}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20250307 10:30:37.471" endtime="20250307 10:30:37.486"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>0.5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250307 10:30:37.995" level="INFO">Slept 500 milliseconds</msg>
+<status status="PASS" starttime="20250307 10:30:37.486" endtime="20250307 10:30:37.995"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>id:${option}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20250307 10:30:37.995" endtime="20250307 10:30:38.022"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.document.getElementById("${option}").click()</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20250307 10:30:38.023" level="INFO">Executing JavaScript:
+window.document.getElementById("header-categories--pet-shop-c-a0").click()
+Without any arguments.</msg>
+<status status="PASS" starttime="20250307 10:30:38.022" endtime="20250307 10:30:38.092"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${page_spinner}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20250307 10:30:38.093" endtime="20250307 10:30:38.336"/>
+</kw>
+<status status="PASS" starttime="20250307 10:30:37.117" endtime="20250307 10:30:38.337"/>
+</kw>
+<kw name="Then Current Location should be" library="migrosSteps">
+<arg>/pet-shop-c-a0</arg>
+<kw name="Wait Until Location Contains" library="SeleniumLibrary">
+<arg>${uri}</arg>
+<doc>Waits until the current URL contains ``expected``.</doc>
+<status status="PASS" starttime="20250307 10:30:38.338" endtime="20250307 10:30:38.342"/>
+</kw>
+<status status="PASS" starttime="20250307 10:30:38.338" endtime="20250307 10:30:38.342"/>
+</kw>
+<kw name="Run Keyword If Test Failed" library="BuiltIn" type="TEARDOWN">
+<arg>capture screenshot</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" starttime="20250307 10:30:38.343" endtime="20250307 10:30:38.343"/>
+</kw>
+<status status="PASS" starttime="20250307 10:30:10.057" endtime="20250307 10:30:38.343"/>
+</test>
+<test id="s1-s1-t3" name="Pet Shop page can be displayed successfully" line="19">
+<kw name="Given Current Location Should be" library="migrosSteps">
+<arg>/pet-shop-c-a0</arg>
+<kw name="Wait Until Location Contains" library="SeleniumLibrary">
+<arg>${uri}</arg>
+<doc>Waits until the current URL contains ``expected``.</doc>
+<status status="PASS" starttime="20250307 10:30:38.344" endtime="20250307 10:30:38.352"/>
+</kw>
+<status status="PASS" starttime="20250307 10:30:38.344" endtime="20250307 10:30:38.352"/>
+</kw>
+<kw name="And User should not see" library="migrosSteps">
+<arg>${page_spinner}</arg>
+<kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
+<arg>${element}</arg>
+<arg>${waitTime}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" starttime="20250307 10:30:38.353" endtime="20250307 10:30:54.299"/>
+</kw>
+<status status="PASS" starttime="20250307 10:30:38.352" endtime="20250307 10:30:54.299"/>
+</kw>
+<kw name="And Mouse over" library="SeleniumLibrary">
+<arg>${tab_migrossanalmarket_enabled}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20250307 10:30:54.301" level="INFO">Simulating Mouse Over on element '//*[@id="header-sanalmarket-tab" and contains(@class,"selected")]'.</msg>
+<status status="PASS" starttime="20250307 10:30:54.301" endtime="20250307 10:30:54.586"/>
+</kw>
+<kw name="Then Filter header should be" library="migrosSteps">
+<arg>Pet Shop</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${filter_header}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20250307 10:30:54.587" endtime="20250307 10:30:54.603"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${actualHeader}</var>
+<arg>${filter_header}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20250307 10:30:54.618" level="INFO">${actualHeader} = Pet Shop</msg>
+<status status="PASS" starttime="20250307 10:30:54.603" endtime="20250307 10:30:54.618"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${actualHeader}</arg>
+<arg>${expectedHeader}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20250307 10:30:54.618" endtime="20250307 10:30:54.619"/>
+</kw>
+<status status="PASS" starttime="20250307 10:30:54.587" endtime="20250307 10:30:54.619"/>
+</kw>
+<kw name="And Sub category under the main page should be" library="migrosSteps">
+<arg>Pet Shop</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${subcategory_text}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20250307 10:30:54.620" endtime="20250307 10:30:54.635"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${subcategory_text}</arg>
+<arg>${expectedSubCategory}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20250307 10:30:54.636" level="INFO">Verifying element '(//*[@class="breadcrumb desktop-only"]//a[@class="breadcrumbs__link"])[2]' contains exact text 'Pet Shop'.</msg>
+<status status="PASS" starttime="20250307 10:30:54.636" endtime="20250307 10:30:54.647"/>
+</kw>
+<status status="PASS" starttime="20250307 10:30:54.619" endtime="20250307 10:30:54.647"/>
+</kw>
+<kw name="And Subcategory in filter should be existing for" library="migrosSteps">
+<arg>Köpek</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//*[@class="filter__subcategories ng-star-inserted"]//a[contains(text(),"${expected}")]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20250307 10:30:54.648" endtime="20250307 10:30:54.665"/>
+</kw>
+<status status="PASS" starttime="20250307 10:30:54.648" endtime="20250307 10:30:54.665"/>
+</kw>
+<kw name="And Subcategory in filter should be existing for" library="migrosSteps">
+<arg>Kedi</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//*[@class="filter__subcategories ng-star-inserted"]//a[contains(text(),"${expected}")]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20250307 10:30:54.666" endtime="20250307 10:30:54.694"/>
+</kw>
+<status status="PASS" starttime="20250307 10:30:54.665" endtime="20250307 10:30:54.694"/>
+</kw>
+<kw name="And Subcategory in filter should be existing for" library="migrosSteps">
+<arg>Pet Aksesuarları</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//*[@class="filter__subcategories ng-star-inserted"]//a[contains(text(),"${expected}")]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20250307 10:30:54.694" endtime="20250307 10:30:54.711"/>
+</kw>
+<status status="PASS" starttime="20250307 10:30:54.694" endtime="20250307 10:30:54.711"/>
+</kw>
+<kw name="Run Keyword If Test Failed" library="BuiltIn" type="TEARDOWN">
+<arg>capture screenshot</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" starttime="20250307 10:30:54.712" endtime="20250307 10:30:54.712"/>
+</kw>
+<status status="PASS" starttime="20250307 10:30:38.344" endtime="20250307 10:30:54.712"/>
+</test>
+<test id="s1-s1-t4" name="Product items are listed according to lowest price on the page" line="29">
+<kw name="Given User should see" library="migrosSteps">
+<arg>${sortfilter_dropdown}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${element}</arg>
+<arg>${waitTime}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20250307 10:30:54.714" endtime="20250307 10:30:54.729"/>
+</kw>
+<status status="PASS" starttime="20250307 10:30:54.713" endtime="20250307 10:30:54.729"/>
+</kw>
+<kw name="When User clicks to" library="migrosSteps">
+<arg>${sortfilter_dropdown}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${element}</arg>
+<arg>${waitTime}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20250307 10:30:54.730" endtime="20250307 10:30:54.742"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250307 10:30:54.743" level="INFO">Clicking element '//*[@class="sort-dropdown clearMarginTop"]'.</msg>
+<status status="PASS" starttime="20250307 10:30:54.743" endtime="20250307 10:30:54.806"/>
+</kw>
+<status status="PASS" starttime="20250307 10:30:54.729" endtime="20250307 10:30:54.806"/>
+</kw>
+<kw name="And User clicks to" library="migrosSteps">
+<arg>${filteroption_dusukfiyat}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${element}</arg>
+<arg>${waitTime}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20250307 10:30:54.807" endtime="20250307 10:30:54.825"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250307 10:30:54.826" level="INFO">Clicking element '//mat-option//span[text()=" Önce En Düşük Fiyat "]'.</msg>
+<status status="PASS" starttime="20250307 10:30:54.826" endtime="20250307 10:30:54.911"/>
+</kw>
+<status status="PASS" starttime="20250307 10:30:54.807" endtime="20250307 10:30:54.911"/>
+</kw>
+<kw name="Then User should see" library="migrosSteps">
+<arg>${page_spinner}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${element}</arg>
+<arg>${waitTime}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20250307 10:30:54.912" endtime="20250307 10:30:54.933"/>
+</kw>
+<status status="PASS" starttime="20250307 10:30:54.911" endtime="20250307 10:30:54.934"/>
+</kw>
+<kw name="Then User should not see" library="migrosSteps">
+<arg>${page_spinner}</arg>
+<kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
+<arg>${element}</arg>
+<arg>${waitTime}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" starttime="20250307 10:30:54.935" endtime="20250307 10:30:55.357"/>
+</kw>
+<status status="PASS" starttime="20250307 10:30:54.934" endtime="20250307 10:30:55.357"/>
+</kw>
+<kw name="And All Items on page are listed correctly according to lowest price" library="migrosSteps">
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>@{all_prices}</var>
+<arg>${product_prices_onPage}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20250307 10:30:55.376" level="INFO">@{all_prices} = [ &lt;selenium.webdriver.remote.webelement.WebElement (session="228c991bb070ea38136b4b8574a958fc", element="f.97FA3887AF35342E18C6FA928249F1C2.d.A04E42B667E2D123BE1182691BE52930.e.197")&gt; | &lt;selenium.webd...</msg>
+<status status="PASS" starttime="20250307 10:30:55.357" endtime="20250307 10:30:55.376"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>${price_list}</var>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20250307 10:30:55.376" level="INFO">${price_list} = []</msg>
+<status status="PASS" starttime="20250307 10:30:55.376" endtime="20250307 10:30:55.376"/>
+</kw>
+<for flavor="IN">
+<var>${price}</var>
+<value>@{all_prices}</value>
+<iter>
+<var name="${price}">&lt;selenium.webdriver.remote.webelement.WebElement (session="228c991bb070ea38136b4b8574a958fc", element="f.97FA3887AF35342E18C6FA928249F1C2.d.A04E42B667E2D123BE1182691BE52930.e.197")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${price_text}</var>
+<arg>${price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20250307 10:30:55.387" level="INFO">${price_text} = 14,95 TL</msg>
+<status status="PASS" starttime="20250307 10:30:55.377" endtime="20250307 10:30:55.387"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${formatted_price}</var>
+<arg>${price_text}</arg>
+<arg>TL</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20250307 10:30:55.388" level="INFO">${formatted_price} = 14,95 </msg>
+<status status="PASS" starttime="20250307 10:30:55.387" endtime="20250307 10:30:55.388"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${formatted_price}</var>
+<arg>${formatted_price}</arg>
+<arg>,</arg>
+<arg>.</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20250307 10:30:55.388" level="INFO">${formatted_price} = 14.95 </msg>
+<status status="PASS" starttime="20250307 10:30:55.388" endtime="20250307 10:30:55.388"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${price_float}</var>
+<arg>${formatted_price}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20250307 10:30:55.388" level="INFO">${price_float} = 14.95</msg>
+<status status="PASS" starttime="20250307 10:30:55.388" endtime="20250307 10:30:55.388"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${price_list}</arg>
+<arg>${price_float}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20250307 10:30:55.388" endtime="20250307 10:30:55.389"/>
+</kw>
+<status status="PASS" starttime="20250307 10:30:55.377" endtime="20250307 10:30:55.389"/>
+</iter>
+<iter>
+<var name="${price}">&lt;selenium.webdriver.remote.webelement.WebElement (session="228c991bb070ea38136b4b8574a958fc", element="f.97FA3887AF35342E18C6FA928249F1C2.d.A04E42B667E2D123BE1182691BE52930.e.198")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${price_text}</var>
+<arg>${price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20250307 10:30:55.395" level="INFO">${price_text} = 14,95 TL</msg>
+<status status="PASS" starttime="20250307 10:30:55.389" endtime="20250307 10:30:55.395"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${formatted_price}</var>
+<arg>${price_text}</arg>
+<arg>TL</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20250307 10:30:55.396" level="INFO">${formatted_price} = 14,95 </msg>
+<status status="PASS" starttime="20250307 10:30:55.395" endtime="20250307 10:30:55.396"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${formatted_price}</var>
+<arg>${formatted_price}</arg>
+<arg>,</arg>
+<arg>.</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20250307 10:30:55.396" level="INFO">${formatted_price} = 14.95 </msg>
+<status status="PASS" starttime="20250307 10:30:55.396" endtime="20250307 10:30:55.396"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${price_float}</var>
+<arg>${formatted_price}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20250307 10:30:55.397" level="INFO">${price_float} = 14.95</msg>
+<status status="PASS" starttime="20250307 10:30:55.397" endtime="20250307 10:30:55.397"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${price_list}</arg>
+<arg>${price_float}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20250307 10:30:55.397" endtime="20250307 10:30:55.397"/>
+</kw>
+<status status="PASS" starttime="20250307 10:30:55.389" endtime="20250307 10:30:55.397"/>
+</iter>
+<iter>
+<var name="${price}">&lt;selenium.webdriver.remote.webelement.WebElement (session="228c991bb070ea38136b4b8574a958fc", element="f.97FA3887AF35342E18C6FA928249F1C2.d.A04E42B667E2D123BE1182691BE52930.e.199")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${price_text}</var>
+<arg>${price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20250307 10:30:55.403" level="INFO">${price_text} = 14,95 TL</msg>
+<status status="PASS" starttime="20250307 10:30:55.397" endtime="20250307 10:30:55.403"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${formatted_price}</var>
+<arg>${price_text}</arg>
+<arg>TL</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20250307 10:30:55.404" level="INFO">${formatted_price} = 14,95 </msg>
+<status status="PASS" starttime="20250307 10:30:55.403" endtime="20250307 10:30:55.404"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${formatted_price}</var>
+<arg>${formatted_price}</arg>
+<arg>,</arg>
+<arg>.</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20250307 10:30:55.404" level="INFO">${formatted_price} = 14.95 </msg>
+<status status="PASS" starttime="20250307 10:30:55.404" endtime="20250307 10:30:55.404"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${price_float}</var>
+<arg>${formatted_price}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20250307 10:30:55.404" level="INFO">${price_float} = 14.95</msg>
+<status status="PASS" starttime="20250307 10:30:55.404" endtime="20250307 10:30:55.404"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${price_list}</arg>
+<arg>${price_float}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20250307 10:30:55.404" endtime="20250307 10:30:55.404"/>
+</kw>
+<status status="PASS" starttime="20250307 10:30:55.397" endtime="20250307 10:30:55.404"/>
+</iter>
+<iter>
+<var name="${price}">&lt;selenium.webdriver.remote.webelement.WebElement (session="228c991bb070ea38136b4b8574a958fc", element="f.97FA3887AF35342E18C6FA928249F1C2.d.A04E42B667E2D123BE1182691BE52930.e.200")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${price_text}</var>
+<arg>${price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20250307 10:30:55.410" level="INFO">${price_text} = 19,95 TL</msg>
+<status status="PASS" starttime="20250307 10:30:55.405" endtime="20250307 10:30:55.410"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${formatted_price}</var>
+<arg>${price_text}</arg>
+<arg>TL</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20250307 10:30:55.411" level="INFO">${formatted_price} = 19,95 </msg>
+<status status="PASS" starttime="20250307 10:30:55.410" endtime="20250307 10:30:55.411"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${formatted_price}</var>
+<arg>${formatted_price}</arg>
+<arg>,</arg>
+<arg>.</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20250307 10:30:55.411" level="INFO">${formatted_price} = 19.95 </msg>
+<status status="PASS" starttime="20250307 10:30:55.411" endtime="20250307 10:30:55.411"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${price_float}</var>
+<arg>${formatted_price}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20250307 10:30:55.411" level="INFO">${price_float} = 19.95</msg>
+<status status="PASS" starttime="20250307 10:30:55.411" endtime="20250307 10:30:55.411"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${price_list}</arg>
+<arg>${price_float}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20250307 10:30:55.411" endtime="20250307 10:30:55.412"/>
+</kw>
+<status status="PASS" starttime="20250307 10:30:55.405" endtime="20250307 10:30:55.412"/>
+</iter>
+<iter>
+<var name="${price}">&lt;selenium.webdriver.remote.webelement.WebElement (session="228c991bb070ea38136b4b8574a958fc", element="f.97FA3887AF35342E18C6FA928249F1C2.d.A04E42B667E2D123BE1182691BE52930.e.201")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${price_text}</var>
+<arg>${price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20250307 10:30:55.420" level="INFO">${price_text} = 19,95 TL</msg>
+<status status="PASS" starttime="20250307 10:30:55.412" endtime="20250307 10:30:55.420"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${formatted_price}</var>
+<arg>${price_text}</arg>
+<arg>TL</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20250307 10:30:55.421" level="INFO">${formatted_price} = 19,95 </msg>
+<status status="PASS" starttime="20250307 10:30:55.420" endtime="20250307 10:30:55.421"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${formatted_price}</var>
+<arg>${formatted_price}</arg>
+<arg>,</arg>
+<arg>.</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20250307 10:30:55.421" level="INFO">${formatted_price} = 19.95 </msg>
+<status status="PASS" starttime="20250307 10:30:55.421" endtime="20250307 10:30:55.421"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${price_float}</var>
+<arg>${formatted_price}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20250307 10:30:55.421" level="INFO">${price_float} = 19.95</msg>
+<status status="PASS" starttime="20250307 10:30:55.421" endtime="20250307 10:30:55.421"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${price_list}</arg>
+<arg>${price_float}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20250307 10:30:55.421" endtime="20250307 10:30:55.421"/>
+</kw>
+<status status="PASS" starttime="20250307 10:30:55.412" endtime="20250307 10:30:55.421"/>
+</iter>
+<iter>
+<var name="${price}">&lt;selenium.webdriver.remote.webelement.WebElement (session="228c991bb070ea38136b4b8574a958fc", element="f.97FA3887AF35342E18C6FA928249F1C2.d.A04E42B667E2D123BE1182691BE52930.e.202")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${price_text}</var>
+<arg>${price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20250307 10:30:55.449" level="INFO">${price_text} = 19,95 TL</msg>
+<status status="PASS" starttime="20250307 10:30:55.421" endtime="20250307 10:30:55.449"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${formatted_price}</var>
+<arg>${price_text}</arg>
+<arg>TL</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20250307 10:30:55.449" level="INFO">${formatted_price} = 19,95 </msg>
+<status status="PASS" starttime="20250307 10:30:55.449" endtime="20250307 10:30:55.449"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${formatted_price}</var>
+<arg>${formatted_price}</arg>
+<arg>,</arg>
+<arg>.</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20250307 10:30:55.450" level="INFO">${formatted_price} = 19.95 </msg>
+<status status="PASS" starttime="20250307 10:30:55.449" endtime="20250307 10:30:55.450"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${price_float}</var>
+<arg>${formatted_price}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20250307 10:30:55.450" level="INFO">${price_float} = 19.95</msg>
+<status status="PASS" starttime="20250307 10:30:55.450" endtime="20250307 10:30:55.450"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${price_list}</arg>
+<arg>${price_float}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20250307 10:30:55.450" endtime="20250307 10:30:55.450"/>
+</kw>
+<status status="PASS" starttime="20250307 10:30:55.421" endtime="20250307 10:30:55.450"/>
+</iter>
+<iter>
+<var name="${price}">&lt;selenium.webdriver.remote.webelement.WebElement (session="228c991bb070ea38136b4b8574a958fc", element="f.97FA3887AF35342E18C6FA928249F1C2.d.A04E42B667E2D123BE1182691BE52930.e.203")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${price_text}</var>
+<arg>${price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20250307 10:30:55.456" level="INFO">${price_text} = 20,45 TL</msg>
+<status status="PASS" starttime="20250307 10:30:55.450" endtime="20250307 10:30:55.456"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${formatted_price}</var>
+<arg>${price_text}</arg>
+<arg>TL</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20250307 10:30:55.457" level="INFO">${formatted_price} = 20,45 </msg>
+<status status="PASS" starttime="20250307 10:30:55.457" endtime="20250307 10:30:55.457"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${formatted_price}</var>
+<arg>${formatted_price}</arg>
+<arg>,</arg>
+<arg>.</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20250307 10:30:55.457" level="INFO">${formatted_price} = 20.45 </msg>
+<status status="PASS" starttime="20250307 10:30:55.457" endtime="20250307 10:30:55.457"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${price_float}</var>
+<arg>${formatted_price}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20250307 10:30:55.458" level="INFO">${price_float} = 20.45</msg>
+<status status="PASS" starttime="20250307 10:30:55.457" endtime="20250307 10:30:55.458"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${price_list}</arg>
+<arg>${price_float}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20250307 10:30:55.458" endtime="20250307 10:30:55.458"/>
+</kw>
+<status status="PASS" starttime="20250307 10:30:55.450" endtime="20250307 10:30:55.458"/>
+</iter>
+<iter>
+<var name="${price}">&lt;selenium.webdriver.remote.webelement.WebElement (session="228c991bb070ea38136b4b8574a958fc", element="f.97FA3887AF35342E18C6FA928249F1C2.d.A04E42B667E2D123BE1182691BE52930.e.204")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${price_text}</var>
+<arg>${price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20250307 10:30:55.465" level="INFO">${price_text} = 20,45 TL</msg>
+<status status="PASS" starttime="20250307 10:30:55.458" endtime="20250307 10:30:55.465"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${formatted_price}</var>
+<arg>${price_text}</arg>
+<arg>TL</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20250307 10:30:55.465" level="INFO">${formatted_price} = 20,45 </msg>
+<status status="PASS" starttime="20250307 10:30:55.465" endtime="20250307 10:30:55.466"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${formatted_price}</var>
+<arg>${formatted_price}</arg>
+<arg>,</arg>
+<arg>.</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20250307 10:30:55.466" level="INFO">${formatted_price} = 20.45 </msg>
+<status status="PASS" starttime="20250307 10:30:55.466" endtime="20250307 10:30:55.466"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${price_float}</var>
+<arg>${formatted_price}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20250307 10:30:55.466" level="INFO">${price_float} = 20.45</msg>
+<status status="PASS" starttime="20250307 10:30:55.466" endtime="20250307 10:30:55.466"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${price_list}</arg>
+<arg>${price_float}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20250307 10:30:55.466" endtime="20250307 10:30:55.466"/>
+</kw>
+<status status="PASS" starttime="20250307 10:30:55.458" endtime="20250307 10:30:55.466"/>
+</iter>
+<iter>
+<var name="${price}">&lt;selenium.webdriver.remote.webelement.WebElement (session="228c991bb070ea38136b4b8574a958fc", element="f.97FA3887AF35342E18C6FA928249F1C2.d.A04E42B667E2D123BE1182691BE52930.e.205")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${price_text}</var>
+<arg>${price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20250307 10:30:55.472" level="INFO">${price_text} = 20,45 TL</msg>
+<status status="PASS" starttime="20250307 10:30:55.466" endtime="20250307 10:30:55.472"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${formatted_price}</var>
+<arg>${price_text}</arg>
+<arg>TL</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20250307 10:30:55.472" level="INFO">${formatted_price} = 20,45 </msg>
+<status status="PASS" starttime="20250307 10:30:55.472" endtime="20250307 10:30:55.472"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${formatted_price}</var>
+<arg>${formatted_price}</arg>
+<arg>,</arg>
+<arg>.</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20250307 10:30:55.472" level="INFO">${formatted_price} = 20.45 </msg>
+<status status="PASS" starttime="20250307 10:30:55.472" endtime="20250307 10:30:55.472"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${price_float}</var>
+<arg>${formatted_price}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20250307 10:30:55.472" level="INFO">${price_float} = 20.45</msg>
+<status status="PASS" starttime="20250307 10:30:55.472" endtime="20250307 10:30:55.472"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${price_list}</arg>
+<arg>${price_float}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20250307 10:30:55.474" endtime="20250307 10:30:55.474"/>
+</kw>
+<status status="PASS" starttime="20250307 10:30:55.466" endtime="20250307 10:30:55.474"/>
+</iter>
+<iter>
+<var name="${price}">&lt;selenium.webdriver.remote.webelement.WebElement (session="228c991bb070ea38136b4b8574a958fc", element="f.97FA3887AF35342E18C6FA928249F1C2.d.A04E42B667E2D123BE1182691BE52930.e.206")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${price_text}</var>
+<arg>${price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20250307 10:30:55.479" level="INFO">${price_text} = 20,45 TL</msg>
+<status status="PASS" starttime="20250307 10:30:55.474" endtime="20250307 10:30:55.479"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${formatted_price}</var>
+<arg>${price_text}</arg>
+<arg>TL</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20250307 10:30:55.480" level="INFO">${formatted_price} = 20,45 </msg>
+<status status="PASS" starttime="20250307 10:30:55.479" endtime="20250307 10:30:55.480"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${formatted_price}</var>
+<arg>${formatted_price}</arg>
+<arg>,</arg>
+<arg>.</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20250307 10:30:55.480" level="INFO">${formatted_price} = 20.45 </msg>
+<status status="PASS" starttime="20250307 10:30:55.480" endtime="20250307 10:30:55.480"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${price_float}</var>
+<arg>${formatted_price}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20250307 10:30:55.480" level="INFO">${price_float} = 20.45</msg>
+<status status="PASS" starttime="20250307 10:30:55.480" endtime="20250307 10:30:55.480"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${price_list}</arg>
+<arg>${price_float}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20250307 10:30:55.480" endtime="20250307 10:30:55.480"/>
+</kw>
+<status status="PASS" starttime="20250307 10:30:55.474" endtime="20250307 10:30:55.480"/>
+</iter>
+<iter>
+<var name="${price}">&lt;selenium.webdriver.remote.webelement.WebElement (session="228c991bb070ea38136b4b8574a958fc", element="f.97FA3887AF35342E18C6FA928249F1C2.d.A04E42B667E2D123BE1182691BE52930.e.207")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${price_text}</var>
+<arg>${price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20250307 10:30:55.487" level="INFO">${price_text} = 20,45 TL</msg>
+<status status="PASS" starttime="20250307 10:30:55.480" endtime="20250307 10:30:55.487"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${formatted_price}</var>
+<arg>${price_text}</arg>
+<arg>TL</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20250307 10:30:55.488" level="INFO">${formatted_price} = 20,45 </msg>
+<status status="PASS" starttime="20250307 10:30:55.487" endtime="20250307 10:30:55.488"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${formatted_price}</var>
+<arg>${formatted_price}</arg>
+<arg>,</arg>
+<arg>.</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20250307 10:30:55.488" level="INFO">${formatted_price} = 20.45 </msg>
+<status status="PASS" starttime="20250307 10:30:55.488" endtime="20250307 10:30:55.488"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${price_float}</var>
+<arg>${formatted_price}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20250307 10:30:55.488" level="INFO">${price_float} = 20.45</msg>
+<status status="PASS" starttime="20250307 10:30:55.488" endtime="20250307 10:30:55.488"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${price_list}</arg>
+<arg>${price_float}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20250307 10:30:55.488" endtime="20250307 10:30:55.488"/>
+</kw>
+<status status="PASS" starttime="20250307 10:30:55.480" endtime="20250307 10:30:55.488"/>
+</iter>
+<iter>
+<var name="${price}">&lt;selenium.webdriver.remote.webelement.WebElement (session="228c991bb070ea38136b4b8574a958fc", element="f.97FA3887AF35342E18C6FA928249F1C2.d.A04E42B667E2D123BE1182691BE52930.e.208")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${price_text}</var>
+<arg>${price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20250307 10:30:55.494" level="INFO">${price_text} = 28,95 TL</msg>
+<status status="PASS" starttime="20250307 10:30:55.488" endtime="20250307 10:30:55.494"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${formatted_price}</var>
+<arg>${price_text}</arg>
+<arg>TL</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20250307 10:30:55.495" level="INFO">${formatted_price} = 28,95 </msg>
+<status status="PASS" starttime="20250307 10:30:55.494" endtime="20250307 10:30:55.495"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${formatted_price}</var>
+<arg>${formatted_price}</arg>
+<arg>,</arg>
+<arg>.</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20250307 10:30:55.495" level="INFO">${formatted_price} = 28.95 </msg>
+<status status="PASS" starttime="20250307 10:30:55.495" endtime="20250307 10:30:55.495"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${price_float}</var>
+<arg>${formatted_price}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20250307 10:30:55.495" level="INFO">${price_float} = 28.95</msg>
+<status status="PASS" starttime="20250307 10:30:55.495" endtime="20250307 10:30:55.495"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${price_list}</arg>
+<arg>${price_float}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20250307 10:30:55.495" endtime="20250307 10:30:55.495"/>
+</kw>
+<status status="PASS" starttime="20250307 10:30:55.488" endtime="20250307 10:30:55.495"/>
+</iter>
+<iter>
+<var name="${price}">&lt;selenium.webdriver.remote.webelement.WebElement (session="228c991bb070ea38136b4b8574a958fc", element="f.97FA3887AF35342E18C6FA928249F1C2.d.A04E42B667E2D123BE1182691BE52930.e.209")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${price_text}</var>
+<arg>${price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20250307 10:30:55.501" level="INFO">${price_text} = 28,95 TL</msg>
+<status status="PASS" starttime="20250307 10:30:55.495" endtime="20250307 10:30:55.501"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${formatted_price}</var>
+<arg>${price_text}</arg>
+<arg>TL</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20250307 10:30:55.502" level="INFO">${formatted_price} = 28,95 </msg>
+<status status="PASS" starttime="20250307 10:30:55.501" endtime="20250307 10:30:55.502"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${formatted_price}</var>
+<arg>${formatted_price}</arg>
+<arg>,</arg>
+<arg>.</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20250307 10:30:55.502" level="INFO">${formatted_price} = 28.95 </msg>
+<status status="PASS" starttime="20250307 10:30:55.502" endtime="20250307 10:30:55.502"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${price_float}</var>
+<arg>${formatted_price}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20250307 10:30:55.502" level="INFO">${price_float} = 28.95</msg>
+<status status="PASS" starttime="20250307 10:30:55.502" endtime="20250307 10:30:55.502"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${price_list}</arg>
+<arg>${price_float}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20250307 10:30:55.502" endtime="20250307 10:30:55.503"/>
+</kw>
+<status status="PASS" starttime="20250307 10:30:55.495" endtime="20250307 10:30:55.503"/>
+</iter>
+<iter>
+<var name="${price}">&lt;selenium.webdriver.remote.webelement.WebElement (session="228c991bb070ea38136b4b8574a958fc", element="f.97FA3887AF35342E18C6FA928249F1C2.d.A04E42B667E2D123BE1182691BE52930.e.210")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${price_text}</var>
+<arg>${price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20250307 10:30:55.511" level="INFO">${price_text} = 28,95 TL</msg>
+<status status="PASS" starttime="20250307 10:30:55.503" endtime="20250307 10:30:55.511"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${formatted_price}</var>
+<arg>${price_text}</arg>
+<arg>TL</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20250307 10:30:55.512" level="INFO">${formatted_price} = 28,95 </msg>
+<status status="PASS" starttime="20250307 10:30:55.511" endtime="20250307 10:30:55.512"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${formatted_price}</var>
+<arg>${formatted_price}</arg>
+<arg>,</arg>
+<arg>.</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20250307 10:30:55.512" level="INFO">${formatted_price} = 28.95 </msg>
+<status status="PASS" starttime="20250307 10:30:55.512" endtime="20250307 10:30:55.512"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${price_float}</var>
+<arg>${formatted_price}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20250307 10:30:55.512" level="INFO">${price_float} = 28.95</msg>
+<status status="PASS" starttime="20250307 10:30:55.512" endtime="20250307 10:30:55.512"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${price_list}</arg>
+<arg>${price_float}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20250307 10:30:55.513" endtime="20250307 10:30:55.513"/>
+</kw>
+<status status="PASS" starttime="20250307 10:30:55.503" endtime="20250307 10:30:55.513"/>
+</iter>
+<iter>
+<var name="${price}">&lt;selenium.webdriver.remote.webelement.WebElement (session="228c991bb070ea38136b4b8574a958fc", element="f.97FA3887AF35342E18C6FA928249F1C2.d.A04E42B667E2D123BE1182691BE52930.e.211")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${price_text}</var>
+<arg>${price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20250307 10:30:55.519" level="INFO">${price_text} = 28,95 TL</msg>
+<status status="PASS" starttime="20250307 10:30:55.513" endtime="20250307 10:30:55.520"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${formatted_price}</var>
+<arg>${price_text}</arg>
+<arg>TL</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20250307 10:30:55.520" level="INFO">${formatted_price} = 28,95 </msg>
+<status status="PASS" starttime="20250307 10:30:55.520" endtime="20250307 10:30:55.520"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${formatted_price}</var>
+<arg>${formatted_price}</arg>
+<arg>,</arg>
+<arg>.</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20250307 10:30:55.520" level="INFO">${formatted_price} = 28.95 </msg>
+<status status="PASS" starttime="20250307 10:30:55.520" endtime="20250307 10:30:55.520"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${price_float}</var>
+<arg>${formatted_price}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20250307 10:30:55.521" level="INFO">${price_float} = 28.95</msg>
+<status status="PASS" starttime="20250307 10:30:55.520" endtime="20250307 10:30:55.521"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${price_list}</arg>
+<arg>${price_float}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20250307 10:30:55.521" endtime="20250307 10:30:55.521"/>
+</kw>
+<status status="PASS" starttime="20250307 10:30:55.513" endtime="20250307 10:30:55.521"/>
+</iter>
+<iter>
+<var name="${price}">&lt;selenium.webdriver.remote.webelement.WebElement (session="228c991bb070ea38136b4b8574a958fc", element="f.97FA3887AF35342E18C6FA928249F1C2.d.A04E42B667E2D123BE1182691BE52930.e.212")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${price_text}</var>
+<arg>${price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20250307 10:30:55.527" level="INFO">${price_text} = 28,95 TL</msg>
+<status status="PASS" starttime="20250307 10:30:55.521" endtime="20250307 10:30:55.527"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${formatted_price}</var>
+<arg>${price_text}</arg>
+<arg>TL</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20250307 10:30:55.527" level="INFO">${formatted_price} = 28,95 </msg>
+<status status="PASS" starttime="20250307 10:30:55.527" endtime="20250307 10:30:55.527"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${formatted_price}</var>
+<arg>${formatted_price}</arg>
+<arg>,</arg>
+<arg>.</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20250307 10:30:55.528" level="INFO">${formatted_price} = 28.95 </msg>
+<status status="PASS" starttime="20250307 10:30:55.527" endtime="20250307 10:30:55.528"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${price_float}</var>
+<arg>${formatted_price}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20250307 10:30:55.528" level="INFO">${price_float} = 28.95</msg>
+<status status="PASS" starttime="20250307 10:30:55.528" endtime="20250307 10:30:55.528"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${price_list}</arg>
+<arg>${price_float}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20250307 10:30:55.528" endtime="20250307 10:30:55.528"/>
+</kw>
+<status status="PASS" starttime="20250307 10:30:55.521" endtime="20250307 10:30:55.528"/>
+</iter>
+<iter>
+<var name="${price}">&lt;selenium.webdriver.remote.webelement.WebElement (session="228c991bb070ea38136b4b8574a958fc", element="f.97FA3887AF35342E18C6FA928249F1C2.d.A04E42B667E2D123BE1182691BE52930.e.213")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${price_text}</var>
+<arg>${price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20250307 10:30:55.534" level="INFO">${price_text} = 28,95 TL</msg>
+<status status="PASS" starttime="20250307 10:30:55.528" endtime="20250307 10:30:55.534"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${formatted_price}</var>
+<arg>${price_text}</arg>
+<arg>TL</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20250307 10:30:55.534" level="INFO">${formatted_price} = 28,95 </msg>
+<status status="PASS" starttime="20250307 10:30:55.534" endtime="20250307 10:30:55.534"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${formatted_price}</var>
+<arg>${formatted_price}</arg>
+<arg>,</arg>
+<arg>.</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20250307 10:30:55.535" level="INFO">${formatted_price} = 28.95 </msg>
+<status status="PASS" starttime="20250307 10:30:55.534" endtime="20250307 10:30:55.535"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${price_float}</var>
+<arg>${formatted_price}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20250307 10:30:55.535" level="INFO">${price_float} = 28.95</msg>
+<status status="PASS" starttime="20250307 10:30:55.535" endtime="20250307 10:30:55.535"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${price_list}</arg>
+<arg>${price_float}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20250307 10:30:55.535" endtime="20250307 10:30:55.535"/>
+</kw>
+<status status="PASS" starttime="20250307 10:30:55.528" endtime="20250307 10:30:55.535"/>
+</iter>
+<iter>
+<var name="${price}">&lt;selenium.webdriver.remote.webelement.WebElement (session="228c991bb070ea38136b4b8574a958fc", element="f.97FA3887AF35342E18C6FA928249F1C2.d.A04E42B667E2D123BE1182691BE52930.e.214")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${price_text}</var>
+<arg>${price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20250307 10:30:55.541" level="INFO">${price_text} = 28,95 TL</msg>
+<status status="PASS" starttime="20250307 10:30:55.535" endtime="20250307 10:30:55.541"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${formatted_price}</var>
+<arg>${price_text}</arg>
+<arg>TL</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20250307 10:30:55.542" level="INFO">${formatted_price} = 28,95 </msg>
+<status status="PASS" starttime="20250307 10:30:55.541" endtime="20250307 10:30:55.542"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${formatted_price}</var>
+<arg>${formatted_price}</arg>
+<arg>,</arg>
+<arg>.</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20250307 10:30:55.542" level="INFO">${formatted_price} = 28.95 </msg>
+<status status="PASS" starttime="20250307 10:30:55.542" endtime="20250307 10:30:55.542"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${price_float}</var>
+<arg>${formatted_price}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20250307 10:30:55.542" level="INFO">${price_float} = 28.95</msg>
+<status status="PASS" starttime="20250307 10:30:55.542" endtime="20250307 10:30:55.542"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${price_list}</arg>
+<arg>${price_float}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20250307 10:30:55.542" endtime="20250307 10:30:55.542"/>
+</kw>
+<status status="PASS" starttime="20250307 10:30:55.535" endtime="20250307 10:30:55.542"/>
+</iter>
+<iter>
+<var name="${price}">&lt;selenium.webdriver.remote.webelement.WebElement (session="228c991bb070ea38136b4b8574a958fc", element="f.97FA3887AF35342E18C6FA928249F1C2.d.A04E42B667E2D123BE1182691BE52930.e.215")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${price_text}</var>
+<arg>${price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20250307 10:30:55.548" level="INFO">${price_text} = 28,95 TL</msg>
+<status status="PASS" starttime="20250307 10:30:55.542" endtime="20250307 10:30:55.548"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${formatted_price}</var>
+<arg>${price_text}</arg>
+<arg>TL</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20250307 10:30:55.549" level="INFO">${formatted_price} = 28,95 </msg>
+<status status="PASS" starttime="20250307 10:30:55.548" endtime="20250307 10:30:55.549"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${formatted_price}</var>
+<arg>${formatted_price}</arg>
+<arg>,</arg>
+<arg>.</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20250307 10:30:55.549" level="INFO">${formatted_price} = 28.95 </msg>
+<status status="PASS" starttime="20250307 10:30:55.549" endtime="20250307 10:30:55.549"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${price_float}</var>
+<arg>${formatted_price}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20250307 10:30:55.549" level="INFO">${price_float} = 28.95</msg>
+<status status="PASS" starttime="20250307 10:30:55.549" endtime="20250307 10:30:55.549"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${price_list}</arg>
+<arg>${price_float}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20250307 10:30:55.549" endtime="20250307 10:30:55.550"/>
+</kw>
+<status status="PASS" starttime="20250307 10:30:55.542" endtime="20250307 10:30:55.550"/>
+</iter>
+<iter>
+<var name="${price}">&lt;selenium.webdriver.remote.webelement.WebElement (session="228c991bb070ea38136b4b8574a958fc", element="f.97FA3887AF35342E18C6FA928249F1C2.d.A04E42B667E2D123BE1182691BE52930.e.216")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${price_text}</var>
+<arg>${price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20250307 10:30:55.556" level="INFO">${price_text} = 28,95 TL</msg>
+<status status="PASS" starttime="20250307 10:30:55.550" endtime="20250307 10:30:55.556"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${formatted_price}</var>
+<arg>${price_text}</arg>
+<arg>TL</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20250307 10:30:55.557" level="INFO">${formatted_price} = 28,95 </msg>
+<status status="PASS" starttime="20250307 10:30:55.556" endtime="20250307 10:30:55.557"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${formatted_price}</var>
+<arg>${formatted_price}</arg>
+<arg>,</arg>
+<arg>.</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20250307 10:30:55.557" level="INFO">${formatted_price} = 28.95 </msg>
+<status status="PASS" starttime="20250307 10:30:55.557" endtime="20250307 10:30:55.557"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${price_float}</var>
+<arg>${formatted_price}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20250307 10:30:55.557" level="INFO">${price_float} = 28.95</msg>
+<status status="PASS" starttime="20250307 10:30:55.557" endtime="20250307 10:30:55.557"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${price_list}</arg>
+<arg>${price_float}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20250307 10:30:55.557" endtime="20250307 10:30:55.557"/>
+</kw>
+<status status="PASS" starttime="20250307 10:30:55.550" endtime="20250307 10:30:55.557"/>
+</iter>
+<iter>
+<var name="${price}">&lt;selenium.webdriver.remote.webelement.WebElement (session="228c991bb070ea38136b4b8574a958fc", element="f.97FA3887AF35342E18C6FA928249F1C2.d.A04E42B667E2D123BE1182691BE52930.e.217")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${price_text}</var>
+<arg>${price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20250307 10:30:55.563" level="INFO">${price_text} = 28,95 TL</msg>
+<status status="PASS" starttime="20250307 10:30:55.557" endtime="20250307 10:30:55.563"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${formatted_price}</var>
+<arg>${price_text}</arg>
+<arg>TL</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20250307 10:30:55.564" level="INFO">${formatted_price} = 28,95 </msg>
+<status status="PASS" starttime="20250307 10:30:55.563" endtime="20250307 10:30:55.564"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${formatted_price}</var>
+<arg>${formatted_price}</arg>
+<arg>,</arg>
+<arg>.</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20250307 10:30:55.564" level="INFO">${formatted_price} = 28.95 </msg>
+<status status="PASS" starttime="20250307 10:30:55.564" endtime="20250307 10:30:55.564"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${price_float}</var>
+<arg>${formatted_price}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20250307 10:30:55.564" level="INFO">${price_float} = 28.95</msg>
+<status status="PASS" starttime="20250307 10:30:55.564" endtime="20250307 10:30:55.564"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${price_list}</arg>
+<arg>${price_float}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20250307 10:30:55.564" endtime="20250307 10:30:55.564"/>
+</kw>
+<status status="PASS" starttime="20250307 10:30:55.557" endtime="20250307 10:30:55.564"/>
+</iter>
+<iter>
+<var name="${price}">&lt;selenium.webdriver.remote.webelement.WebElement (session="228c991bb070ea38136b4b8574a958fc", element="f.97FA3887AF35342E18C6FA928249F1C2.d.A04E42B667E2D123BE1182691BE52930.e.218")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${price_text}</var>
+<arg>${price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20250307 10:30:55.570" level="INFO">${price_text} = 28,95 TL</msg>
+<status status="PASS" starttime="20250307 10:30:55.565" endtime="20250307 10:30:55.570"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${formatted_price}</var>
+<arg>${price_text}</arg>
+<arg>TL</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20250307 10:30:55.570" level="INFO">${formatted_price} = 28,95 </msg>
+<status status="PASS" starttime="20250307 10:30:55.570" endtime="20250307 10:30:55.570"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${formatted_price}</var>
+<arg>${formatted_price}</arg>
+<arg>,</arg>
+<arg>.</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20250307 10:30:55.571" level="INFO">${formatted_price} = 28.95 </msg>
+<status status="PASS" starttime="20250307 10:30:55.571" endtime="20250307 10:30:55.571"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${price_float}</var>
+<arg>${formatted_price}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20250307 10:30:55.571" level="INFO">${price_float} = 28.95</msg>
+<status status="PASS" starttime="20250307 10:30:55.571" endtime="20250307 10:30:55.571"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${price_list}</arg>
+<arg>${price_float}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20250307 10:30:55.571" endtime="20250307 10:30:55.571"/>
+</kw>
+<status status="PASS" starttime="20250307 10:30:55.564" endtime="20250307 10:30:55.571"/>
+</iter>
+<iter>
+<var name="${price}">&lt;selenium.webdriver.remote.webelement.WebElement (session="228c991bb070ea38136b4b8574a958fc", element="f.97FA3887AF35342E18C6FA928249F1C2.d.A04E42B667E2D123BE1182691BE52930.e.219")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${price_text}</var>
+<arg>${price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20250307 10:30:55.577" level="INFO">${price_text} = 28,95 TL</msg>
+<status status="PASS" starttime="20250307 10:30:55.571" endtime="20250307 10:30:55.577"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${formatted_price}</var>
+<arg>${price_text}</arg>
+<arg>TL</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20250307 10:30:55.577" level="INFO">${formatted_price} = 28,95 </msg>
+<status status="PASS" starttime="20250307 10:30:55.577" endtime="20250307 10:30:55.577"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${formatted_price}</var>
+<arg>${formatted_price}</arg>
+<arg>,</arg>
+<arg>.</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20250307 10:30:55.577" level="INFO">${formatted_price} = 28.95 </msg>
+<status status="PASS" starttime="20250307 10:30:55.577" endtime="20250307 10:30:55.577"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${price_float}</var>
+<arg>${formatted_price}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20250307 10:30:55.578" level="INFO">${price_float} = 28.95</msg>
+<status status="PASS" starttime="20250307 10:30:55.577" endtime="20250307 10:30:55.578"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${price_list}</arg>
+<arg>${price_float}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20250307 10:30:55.578" endtime="20250307 10:30:55.578"/>
+</kw>
+<status status="PASS" starttime="20250307 10:30:55.571" endtime="20250307 10:30:55.578"/>
+</iter>
+<iter>
+<var name="${price}">&lt;selenium.webdriver.remote.webelement.WebElement (session="228c991bb070ea38136b4b8574a958fc", element="f.97FA3887AF35342E18C6FA928249F1C2.d.A04E42B667E2D123BE1182691BE52930.e.220")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${price_text}</var>
+<arg>${price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20250307 10:30:55.585" level="INFO">${price_text} = 28,95 TL</msg>
+<status status="PASS" starttime="20250307 10:30:55.578" endtime="20250307 10:30:55.585"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${formatted_price}</var>
+<arg>${price_text}</arg>
+<arg>TL</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20250307 10:30:55.585" level="INFO">${formatted_price} = 28,95 </msg>
+<status status="PASS" starttime="20250307 10:30:55.585" endtime="20250307 10:30:55.585"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${formatted_price}</var>
+<arg>${formatted_price}</arg>
+<arg>,</arg>
+<arg>.</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20250307 10:30:55.585" level="INFO">${formatted_price} = 28.95 </msg>
+<status status="PASS" starttime="20250307 10:30:55.585" endtime="20250307 10:30:55.586"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${price_float}</var>
+<arg>${formatted_price}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20250307 10:30:55.586" level="INFO">${price_float} = 28.95</msg>
+<status status="PASS" starttime="20250307 10:30:55.586" endtime="20250307 10:30:55.586"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${price_list}</arg>
+<arg>${price_float}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20250307 10:30:55.586" endtime="20250307 10:30:55.586"/>
+</kw>
+<status status="PASS" starttime="20250307 10:30:55.578" endtime="20250307 10:30:55.586"/>
+</iter>
+<iter>
+<var name="${price}">&lt;selenium.webdriver.remote.webelement.WebElement (session="228c991bb070ea38136b4b8574a958fc", element="f.97FA3887AF35342E18C6FA928249F1C2.d.A04E42B667E2D123BE1182691BE52930.e.221")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${price_text}</var>
+<arg>${price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20250307 10:30:55.592" level="INFO">${price_text} = 28,95 TL</msg>
+<status status="PASS" starttime="20250307 10:30:55.586" endtime="20250307 10:30:55.592"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${formatted_price}</var>
+<arg>${price_text}</arg>
+<arg>TL</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20250307 10:30:55.593" level="INFO">${formatted_price} = 28,95 </msg>
+<status status="PASS" starttime="20250307 10:30:55.592" endtime="20250307 10:30:55.593"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${formatted_price}</var>
+<arg>${formatted_price}</arg>
+<arg>,</arg>
+<arg>.</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20250307 10:30:55.593" level="INFO">${formatted_price} = 28.95 </msg>
+<status status="PASS" starttime="20250307 10:30:55.593" endtime="20250307 10:30:55.593"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${price_float}</var>
+<arg>${formatted_price}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20250307 10:30:55.593" level="INFO">${price_float} = 28.95</msg>
+<status status="PASS" starttime="20250307 10:30:55.593" endtime="20250307 10:30:55.593"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${price_list}</arg>
+<arg>${price_float}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20250307 10:30:55.593" endtime="20250307 10:30:55.594"/>
+</kw>
+<status status="PASS" starttime="20250307 10:30:55.586" endtime="20250307 10:30:55.594"/>
+</iter>
+<iter>
+<var name="${price}">&lt;selenium.webdriver.remote.webelement.WebElement (session="228c991bb070ea38136b4b8574a958fc", element="f.97FA3887AF35342E18C6FA928249F1C2.d.A04E42B667E2D123BE1182691BE52930.e.222")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${price_text}</var>
+<arg>${price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20250307 10:30:55.600" level="INFO">${price_text} = 28,95 TL</msg>
+<status status="PASS" starttime="20250307 10:30:55.594" endtime="20250307 10:30:55.600"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${formatted_price}</var>
+<arg>${price_text}</arg>
+<arg>TL</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20250307 10:30:55.600" level="INFO">${formatted_price} = 28,95 </msg>
+<status status="PASS" starttime="20250307 10:30:55.600" endtime="20250307 10:30:55.600"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${formatted_price}</var>
+<arg>${formatted_price}</arg>
+<arg>,</arg>
+<arg>.</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20250307 10:30:55.601" level="INFO">${formatted_price} = 28.95 </msg>
+<status status="PASS" starttime="20250307 10:30:55.601" endtime="20250307 10:30:55.601"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${price_float}</var>
+<arg>${formatted_price}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20250307 10:30:55.601" level="INFO">${price_float} = 28.95</msg>
+<status status="PASS" starttime="20250307 10:30:55.601" endtime="20250307 10:30:55.601"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${price_list}</arg>
+<arg>${price_float}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20250307 10:30:55.601" endtime="20250307 10:30:55.601"/>
+</kw>
+<status status="PASS" starttime="20250307 10:30:55.594" endtime="20250307 10:30:55.601"/>
+</iter>
+<iter>
+<var name="${price}">&lt;selenium.webdriver.remote.webelement.WebElement (session="228c991bb070ea38136b4b8574a958fc", element="f.97FA3887AF35342E18C6FA928249F1C2.d.A04E42B667E2D123BE1182691BE52930.e.223")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${price_text}</var>
+<arg>${price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20250307 10:30:55.607" level="INFO">${price_text} = 28,95 TL</msg>
+<status status="PASS" starttime="20250307 10:30:55.601" endtime="20250307 10:30:55.607"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${formatted_price}</var>
+<arg>${price_text}</arg>
+<arg>TL</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20250307 10:30:55.608" level="INFO">${formatted_price} = 28,95 </msg>
+<status status="PASS" starttime="20250307 10:30:55.607" endtime="20250307 10:30:55.608"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${formatted_price}</var>
+<arg>${formatted_price}</arg>
+<arg>,</arg>
+<arg>.</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20250307 10:30:55.608" level="INFO">${formatted_price} = 28.95 </msg>
+<status status="PASS" starttime="20250307 10:30:55.608" endtime="20250307 10:30:55.608"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${price_float}</var>
+<arg>${formatted_price}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20250307 10:30:55.608" level="INFO">${price_float} = 28.95</msg>
+<status status="PASS" starttime="20250307 10:30:55.608" endtime="20250307 10:30:55.608"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${price_list}</arg>
+<arg>${price_float}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20250307 10:30:55.608" endtime="20250307 10:30:55.608"/>
+</kw>
+<status status="PASS" starttime="20250307 10:30:55.601" endtime="20250307 10:30:55.608"/>
+</iter>
+<iter>
+<var name="${price}">&lt;selenium.webdriver.remote.webelement.WebElement (session="228c991bb070ea38136b4b8574a958fc", element="f.97FA3887AF35342E18C6FA928249F1C2.d.A04E42B667E2D123BE1182691BE52930.e.224")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${price_text}</var>
+<arg>${price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20250307 10:30:55.614" level="INFO">${price_text} = 28,95 TL</msg>
+<status status="PASS" starttime="20250307 10:30:55.608" endtime="20250307 10:30:55.614"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${formatted_price}</var>
+<arg>${price_text}</arg>
+<arg>TL</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20250307 10:30:55.615" level="INFO">${formatted_price} = 28,95 </msg>
+<status status="PASS" starttime="20250307 10:30:55.614" endtime="20250307 10:30:55.615"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${formatted_price}</var>
+<arg>${formatted_price}</arg>
+<arg>,</arg>
+<arg>.</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20250307 10:30:55.615" level="INFO">${formatted_price} = 28.95 </msg>
+<status status="PASS" starttime="20250307 10:30:55.615" endtime="20250307 10:30:55.615"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${price_float}</var>
+<arg>${formatted_price}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20250307 10:30:55.616" level="INFO">${price_float} = 28.95</msg>
+<status status="PASS" starttime="20250307 10:30:55.615" endtime="20250307 10:30:55.616"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${price_list}</arg>
+<arg>${price_float}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20250307 10:30:55.616" endtime="20250307 10:30:55.616"/>
+</kw>
+<status status="PASS" starttime="20250307 10:30:55.608" endtime="20250307 10:30:55.616"/>
+</iter>
+<iter>
+<var name="${price}">&lt;selenium.webdriver.remote.webelement.WebElement (session="228c991bb070ea38136b4b8574a958fc", element="f.97FA3887AF35342E18C6FA928249F1C2.d.A04E42B667E2D123BE1182691BE52930.e.225")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${price_text}</var>
+<arg>${price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20250307 10:30:55.622" level="INFO">${price_text} = 28,95 TL</msg>
+<status status="PASS" starttime="20250307 10:30:55.616" endtime="20250307 10:30:55.622"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${formatted_price}</var>
+<arg>${price_text}</arg>
+<arg>TL</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20250307 10:30:55.623" level="INFO">${formatted_price} = 28,95 </msg>
+<status status="PASS" starttime="20250307 10:30:55.622" endtime="20250307 10:30:55.623"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${formatted_price}</var>
+<arg>${formatted_price}</arg>
+<arg>,</arg>
+<arg>.</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20250307 10:30:55.623" level="INFO">${formatted_price} = 28.95 </msg>
+<status status="PASS" starttime="20250307 10:30:55.623" endtime="20250307 10:30:55.623"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${price_float}</var>
+<arg>${formatted_price}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20250307 10:30:55.623" level="INFO">${price_float} = 28.95</msg>
+<status status="PASS" starttime="20250307 10:30:55.623" endtime="20250307 10:30:55.623"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${price_list}</arg>
+<arg>${price_float}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20250307 10:30:55.623" endtime="20250307 10:30:55.623"/>
+</kw>
+<status status="PASS" starttime="20250307 10:30:55.616" endtime="20250307 10:30:55.623"/>
+</iter>
+<iter>
+<var name="${price}">&lt;selenium.webdriver.remote.webelement.WebElement (session="228c991bb070ea38136b4b8574a958fc", element="f.97FA3887AF35342E18C6FA928249F1C2.d.A04E42B667E2D123BE1182691BE52930.e.226")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${price_text}</var>
+<arg>${price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20250307 10:30:55.629" level="INFO">${price_text} = 28,95 TL</msg>
+<status status="PASS" starttime="20250307 10:30:55.624" endtime="20250307 10:30:55.629"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${formatted_price}</var>
+<arg>${price_text}</arg>
+<arg>TL</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20250307 10:30:55.630" level="INFO">${formatted_price} = 28,95 </msg>
+<status status="PASS" starttime="20250307 10:30:55.629" endtime="20250307 10:30:55.630"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${formatted_price}</var>
+<arg>${formatted_price}</arg>
+<arg>,</arg>
+<arg>.</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20250307 10:30:55.630" level="INFO">${formatted_price} = 28.95 </msg>
+<status status="PASS" starttime="20250307 10:30:55.630" endtime="20250307 10:30:55.630"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${price_float}</var>
+<arg>${formatted_price}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20250307 10:30:55.630" level="INFO">${price_float} = 28.95</msg>
+<status status="PASS" starttime="20250307 10:30:55.630" endtime="20250307 10:30:55.630"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${price_list}</arg>
+<arg>${price_float}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20250307 10:30:55.630" endtime="20250307 10:30:55.631"/>
+</kw>
+<status status="PASS" starttime="20250307 10:30:55.624" endtime="20250307 10:30:55.631"/>
+</iter>
+<status status="PASS" starttime="20250307 10:30:55.377" endtime="20250307 10:30:55.631"/>
+</for>
+<kw name="Copy List" library="Collections">
+<var>${sorted_prices}</var>
+<arg>${price_list}</arg>
+<doc>Returns a copy of the given list.</doc>
+<msg timestamp="20250307 10:30:55.631" level="INFO">${sorted_prices} = [14.95, 14.95, 14.95, 19.95, 19.95, 19.95, 20.45, 20.45, 20.45, 20.45, 20.45, 28.95, 28.95, 28.95, 28.95, 28.95, 28.95, 28.95, 28.95, 28.95, 28.95, 28.95, 28.95, 28.95, 28.95, 28.95, 28.95, 28.95, 28....</msg>
+<status status="PASS" starttime="20250307 10:30:55.631" endtime="20250307 10:30:55.631"/>
+</kw>
+<kw name="Sort List" library="Collections">
+<arg>${sorted_prices}</arg>
+<doc>Sorts the given list in place.</doc>
+<status status="PASS" starttime="20250307 10:30:55.631" endtime="20250307 10:30:55.631"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${price_list}</arg>
+<arg>${sorted_prices}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20250307 10:30:55.631" endtime="20250307 10:30:55.631"/>
+</kw>
+<status status="PASS" starttime="20250307 10:30:55.357" endtime="20250307 10:30:55.631"/>
+</kw>
+<kw name="Run Keyword If Test Failed" library="BuiltIn" type="TEARDOWN">
+<arg>capture screenshot</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" starttime="20250307 10:30:55.632" endtime="20250307 10:30:55.632"/>
+</kw>
+<status status="PASS" starttime="20250307 10:30:54.713" endtime="20250307 10:30:55.632"/>
+</test>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20250307 10:30:55.632" endtime="20250307 10:30:58.152"/>
+</kw>
+<status status="PASS" starttime="20250307 10:29:47.464" endtime="20250307 10:30:58.152"/>
+</suite>
+<status status="PASS" starttime="20250307 10:29:47.444" endtime="20250307 10:30:58.154"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="4" fail="0" skip="0" id="s1" name="Features">Features</stat>
+<stat pass="4" fail="0" skip="0" id="s1-s1" name="Migros Petshop">Features.Migros Petshop</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
