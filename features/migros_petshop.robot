@@ -2,6 +2,8 @@
 Resource  ../stepDefinitions/migrosSteps.robot
 
 Suite Setup     Browser is opened and Migros web page is opened
+Test Teardown   Run keyword if test failed      capture screenshot
+
 
 *** Test Cases ***
 Migros Main Page is displayed successfully
