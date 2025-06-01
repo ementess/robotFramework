@@ -28,3 +28,6 @@ In order to generate an allure report after execution, below command is run on t
 
 In order to execute API automation with robot framework, below command is run on terminal
 - robot -d apiResult API
+
+You can follow detailed steps in below document in order to install Robot Framework on your local.
+https://medium.com/@mentes3e/robot-framework-seleniumlibrary-kurulum-9ed24ecb6a65
